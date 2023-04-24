@@ -6,7 +6,7 @@ const ticTacToe = {
         options: ['O', 'X'],
         turnIndex: 0,
         change: function () {
-            this.turnIndex = (this.turnIndex === 0 ? 1 : 0)
+            this.turnIndex = (this.turnIndex === 0 ? 1 : 0);
         }
     },
     containerElement: null,
@@ -50,7 +50,7 @@ const ticTacToe = {
                 this.board[this.winningSequences[i][2]] == simbol) {
                 console.log('winning sequences INDEX: ' + 1);
                 return i;
-
+                   
             }
         };
         return -1;
@@ -58,6 +58,7 @@ const ticTacToe = {
     gameIsOver: function () {
         this.gameOver = true;
         console.log('GAME OVER');
+        alert("Game Over")
     },
     start: function () {
         this.board.fill('');
@@ -68,8 +69,8 @@ const ticTacToe = {
         let content = '';
 
         for (i in this.board) {
-            content += '<div onclick="ticTacToe.makePlay(' + 1 + ')">'
-             + this.board[i] + '</div>';
+            content += '<div onclick="ticTacToe.makePlay(' + i + ')">'
+                + this.board[i] + '</div>';
         };
         this.containerElement.innerHTML = content;
     },
